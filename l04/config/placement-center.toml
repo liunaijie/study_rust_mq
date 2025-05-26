@@ -1,0 +1,5 @@
+node_id = 100
+grpc_port = 9983
+[log]
+log_config = "./config/log4rs.yaml"
+log_path = "./logs"
