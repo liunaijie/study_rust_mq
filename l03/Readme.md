@@ -1,14 +1,14 @@
 配置一个多模块`workspace`Rust项目的样例
 
 # 模块说明
-在这个样例中,总共有4个模块(我仍然以Java中的module模块来这样称呼它)。
+在这个样例中,总共有4个模块(我仍然以Java中的module模块来称呼它)。
 分别为:
-- cmd (入口模块,对应Rust中的lib)
-- common-base (抽离出来的公共代码,对应Rust中的lib)
-- placement-center (某个业务模块的代码,对应Rust中的lib)
-- protocol (某个业务模块的代码,对应Rust中的lib)
+- cmd (入口模块,对应Rust中的Bin)
+- common-base (抽离出来的公共代码,对应Rust中的Lib)
+- placement-center (某个业务模块的代码,对应Rust中的Lib)
+- protocol (某个业务模块的代码,对应Rust中的Lib)
 
-这里的演示代码很简单,在`common-base`中定义个公共方法,由业务模块调用, 再由入口类调用.
+这里的演示代码很简单,仅仅是验证如何进行多个模块之间的代码调用, 在`common-base`中定义公共方法,由业务模块调用, 再由入口类调用.
 
 # 具体配置
 ## 父Cargo
