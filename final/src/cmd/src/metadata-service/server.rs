@@ -1,7 +1,7 @@
 use clap::command;
 use clap::Parser;
 
-pub const DEFAULT_PLACEMENT_CENTER_CONFIG : &str = "config/placement-center.toml";
+pub const DEFAULT_PLACEMENT_CENTER_CONFIG : &str = "config_util/placement-center.toml";
 
 #[derive(Parser,Debug)]
 #[command(next_line_help = true)]

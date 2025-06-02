@@ -1,0 +1,24 @@
+[package]
+name = "cmd"
+version.workspace = true
+edition.workspace = true
+
+
+[dependencies]
+# 导入依赖 需要写在bin前面
+placement-center = {path = "../placement-center"}
+protocol = {path = "../protocol"}
+
+# bin表示主入口函数的文件,用于指定程序启动时运行的程序
+# name表示编译生产的二进制文件的名称
+[[bin]]
+name = "placement-center"
+path = "src/placement-center/server.rs"
+# 我们也可以指定多个bin,生成多个目标二进制文件
+#[[bin]]
+#name = "placement-center"
+#path = "src/placement-center/server.rs"
+
+
+#placement-center = {path = "../common-base" }
+

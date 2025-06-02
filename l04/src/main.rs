@@ -9,7 +9,7 @@ use std::path::Path;
 use std::sync::OnceLock;
 use toml;
 
-pub const DEFAULT_PLACEMENT_CENTER_CONFIG: &str = "config/placement-center.toml";
+pub const DEFAULT_PLACEMENT_CENTER_CONFIG: &str = "config_util/placement-center.toml";
 
 #[derive(Parser, Debug)]
 #[command(next_line_help = true)]
@@ -48,7 +48,7 @@ static PLACEMENT_CENTER_CONF: OnceLock<PlacementCenterConfig> = OnceLock::new();
 
 pub fn init_placement_center_conf_by_path(config_path: &String) -> &'static PlacementCenterConfig {
     PLACEMENT_CENTER_CONF.get_or_init(|| {
-        let content = read_file(config_path).expect("Failed to read config file");
+        let content = read_file(config_path).expect("Failed to read config_util file");
         let pc_config: PlacementCenterConfig = toml::from_str(&content).unwrap();
         return pc_config;
     })
@@ -99,7 +99,7 @@ pub fn init_placement_center_log() {
     };
 
     let config_content = content.replace("{$path}", &conf.log.log_path);
-    print!("using log config is \n{}", config_content);
+    print!("using log config_util is \n{}", config_content);
 
     let config = match serde_yaml::from_str(&config_content) {
         Ok(data) => data,
