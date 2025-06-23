@@ -1,13 +1,13 @@
 use tonic::Request;
 use tonic::transport::Endpoint;
-use l05_1::backend_server::grpc::goodbye::goodbye_client::GoodbyeClient;
-use l05_1::backend_server::grpc::goodbye::GoodbyeRequest;
-use l05_1::backend_server::grpc::hello::hello_client::HelloClient;
-use l05_1::backend_server::grpc::hello::HelloRequest;
+use l05::backend_server::grpc::goodbye::goodbye_client::GoodbyeClient;
+use l05::backend_server::grpc::goodbye::GoodbyeRequest;
+use l05::backend_server::grpc::hello::hello_client::HelloClient;
+use l05::backend_server::grpc::hello::HelloRequest;
 
 #[tokio::main]
 async fn main() {
-    let addr = Endpoint::from_static("https://127.0.0.1:9983");
+    let addr = Endpoint::from_static("https://127.0.0.1:9984");
 
     let mut hello_cli = HelloClient::connect(addr.clone()).await.unwrap();
     let request = Request::new(HelloRequest {

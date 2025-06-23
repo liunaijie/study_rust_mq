@@ -1,8 +1,8 @@
 use log::info;
 use tokio::signal;
 use tokio::sync::broadcast;
-use l05_1::backend_server::grpc::grpc_server::start_grpc_server;
-use l05_1::backend_server::http::http_server::start_http_server;
+use l05::backend_server::grpc::grpc_server::start_grpc_server;
+use l05::backend_server::http::http_server::start_http_server;
 
 #[tokio::main]
 async fn main() {
