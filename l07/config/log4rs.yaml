@@ -1,0 +1,10 @@
+appenders:
+  stdout:
+    kind: console
+    encoder:
+      pattern: "{h({d(%Y-%m-%d %H:%M:%S)})} {h({l})} {M} {T} {h({L})} - {m}{n}"
+
+root:
+  level: info
+  appenders:
+    - stdout
